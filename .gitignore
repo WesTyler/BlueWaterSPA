@@ -1,0 +1,20 @@
+# Logs
+logs
+*.log
+
+# Mac Files
+userstories.txt
+.DS_Store
+*.bac*
+
+# Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
+.grunt
+
+
+# Dependency directory
+node_modules
+bower_components
+client/scripts/_bower.js
+
+# Credentials
+server/config.js
