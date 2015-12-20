@@ -4,7 +4,7 @@
   "description": "Single Page App for BlueWater Energy Services LLC.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server/server.js"
   },
   "author": "westyler",
   "license": "MIT",
