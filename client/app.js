@@ -6,8 +6,7 @@ BlueWater.view = function(ctrl) {
   return m('.app', [
     m('.header', [
       m('picture', {class: 'header-image clearfix'}, [
-        m('source', {media: '(min-width: 650px)', srcset: 'assets/large-header.png'}),
-        m('source', {media: '(min-width: 465px)', srcset: 'assets/medium-header.png'}),
+        m('source', {media: '(min-width: 915px)', srcset: 'assets/large-header.png'}),
         m('img', {src: 'assets/small-header.png', alt: 'BlueWater Energy Services, LLC'})
       ])
     ]),
