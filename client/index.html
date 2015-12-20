@@ -1,7 +1,29 @@
 <head>
-
+  <title>BlueWater Energy Services LLC</title>
+  <script src="./scripts/_bower.js"></script>
+  <link rel="stylesheet" type="text/css" href="./styles/stylesheet.css">
 </head>
 
 <body>
-Hi
+  <div class="clearfix" id="app"></div>
+  <div class="contentHolder clearfix" id="content-holder"></div>
+
+  <script src="components/home.js"></script>
+  <script src="components/about.js"></script>
+  <script src="components/services.js"></script>
+  <script src="app.js"></script>
+
+  <script type="text/javascript">
+      m.mount(document.getElementById("app"), BlueWater)
+  </script>
 </body>
+<footer>
+  <div>
+    <span>
+      BlueWater Energy Services, LLC <br>
+      PO Box 721954 <br>
+      Oklahoma City, OK 73172 <br>
+      <a href="mailto:contact@bluewaterok.com">Contact@bluewaterok.com</a>
+    </span>
+  </div>
+</footer>

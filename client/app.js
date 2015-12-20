@@ -1,0 +1,30 @@
+window.BlueWater = {};
+
+BlueWater.controller = function() {};
+
+BlueWater.view = function(ctrl) {
+  return m('.app', [
+    m('.header', [
+      m('picture', [
+        m('source', {media: '(min-width: 650px)', srcset: 'assets/large-header.png'}),
+        m('source', {media: '(min-width: 465px)', srcset: 'assets/medium-header.png'}),
+        m('img', {src: 'assets/small-header.png', alt: 'BlueWater Energy Services, LLC'})
+      ])
+    ]),
+    m('nav.clearfix', [
+      m('ul', [
+        m('li', [m('a',{class: 'navLink homeNav', href: '/'}, 'Home')]),
+        m('li', [m('a', {class: 'navLink servicesNav', href: '#/services'}, 'About Our Services')]),
+        m('li', [m('a',{class: 'navLink aboutNav', href: '#/about'}, 'About Us')])
+      ])
+    ])
+  ]);
+};
+
+m.route.mode = 'hash';
+
+m.route(document.getElementById('content-holder'), '/', {
+    "/": Home,
+    "/services": Services,
+    "/about": About
+});
