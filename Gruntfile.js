@@ -4,7 +4,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
     bower_concat: {
       all: {
-        dest: 'client/scripts/_bower.js',
+        dest: 'dist/scripts/_bower.js',
         exclude: []
       }
     },
@@ -14,13 +14,11 @@ module.exports = function(grunt) {
       },
       dist: {
         src: ['client/models/*.js', 'client/components/*.js', 'client/app.js'],
-        dest: 'client/scripts/mithril_components.js',
+        dest: 'dist/scripts/mithril_components.js',
       },
     },
     uglify      : {
-      options: {
-        mangleProperties: true
-      },
+      options: {},
       my_target: {
         files: {
           'dist/scripts/mithril_components.min.js': ['client/scripts/mithril_components.js'],
@@ -62,7 +60,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-express-server');
 
   // Register task(s).
-  grunt.registerTask('package', ['bower_concat', 'concat', 'uglify', 'copy']);
+  grunt.registerTask('package', ['bower_concat', 'concat', 'copy']);
   grunt.registerTask('run', ['package', 'express:server', 'watch']);
   grunt.registerTask('deploy', ['package']);
 };
