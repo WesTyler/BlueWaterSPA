@@ -5,6 +5,14 @@ Services.controller = function(){
 
   ctrl.selectedService = m.prop('');
 
+  ctrl.toggleService = function(serviceName) {
+    if (ctrl.selectedService() === serviceName) {
+      ctrl.selectedService('');
+    } else {
+      ctrl.selectedService(serviceName);
+    }
+  };
+
   ctrl.selectedServiceImage = function() {
     switch(ctrl.selectedService()) {
       case 'muscleWall':
@@ -23,21 +31,21 @@ Services.view = function(ctrl){
   return m('div', {class: 'servicesView clearfix'}, [
       m('.image', ctrl.selectedServiceImage()),
       m('h2.aboutHeader', 'About BlueWater Services'),
-      m('h4.aboutItem', {onclick: function() {ctrl.selectedService('muscleWall')}}, 'Muscle Wall Secondary Containment', [
+      m('h4.aboutItem', {onclick: function() {ctrl.toggleService('muscleWall')}}, 'Muscle Wall Secondary Containment', [
         function() {
           if (ctrl.selectedService() === 'muscleWall') {
             return m('.details', 'These are the details about Muscle Wall Secondary Containment');
           }
         }()
       ]),
-      m('h4.aboutItem', {onclick: function() {ctrl.selectedService('driveOver')}}, 'Drive Over Containment with Liner', [
+      m('h4.aboutItem', {onclick: function() {ctrl.toggleService('driveOver')}}, 'Drive Over Containment with Liner', [
         function() {
           if (ctrl.selectedService() === 'driveOver') {
             return m('.details', 'These are the details about Drive Over Containment with Liner');
           }
         }()
       ]),
-      m('h4.aboutItem', {onclick: function() {ctrl.selectedService('polyUrea')}}, 'Polyurea Sprayed Secondary Containment', [
+      m('h4.aboutItem', {onclick: function() {ctrl.toggleService('polyUrea')}}, 'Polyurea Sprayed Secondary Containment', [
         function() {
           if (ctrl.selectedService() === 'polyUrea') {
             return m('.details', 'These are the details about Polyurea Sprayed Secondary Containment');
