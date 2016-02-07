@@ -15,7 +15,8 @@ BlueWater.view = function(ctrl) {
       m('ul', [
         m('li', [m('a',{class: 'navLink homeNav', href: '/'}, 'Home')]),
         m('li', [m('a', {class: 'navLink servicesNav', href: '#/services'}, 'About Our Services')]),
-        m('li', [m('a',{class: 'navLink aboutNav', href: '#/about'}, 'About Us')])
+        m('li', [m('a',{class: 'navLink aboutNav', href: '#/about'}, 'About Us')]),
+        m('li', [m('a',{class: 'navLink quoteNav', href: '#/quote'}, 'Request A Quote')])
       ]),
       m('hr')
     ])
@@ -25,7 +26,8 @@ BlueWater.view = function(ctrl) {
 m.route.mode = 'hash';
 
 m.route(document.getElementById('content-holder'), '/', {
-    "/": Home,
-    "/services": Services,
-    "/about": About
+    '/': Home,
+    '/services': Services,
+    '/about': About,
+    '/quote': Quote
 });
