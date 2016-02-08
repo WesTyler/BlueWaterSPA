@@ -2,7 +2,12 @@ var QuotePage = exports = {};
 
 QuotePage.view = function(ctrl) {
   return m('div', [m('form', {class: 'quoteForm clearfix'}, [
-      m('input', {value: QuotePage.vm.name(), oninput: m.withAttr('value', QuotePage.vm.name)}),
+      m('label', 'Contact Name', [
+        m('input', {value: QuotePage.vm.name(), oninput: m.withAttr('value', QuotePage.vm.name)})
+      ]),
+      m('label', 'Company', [
+        m('input', {value: QuotePage.vm.companyName(), oninput: m.withAttr('value', QuotePage.vm.name)})
+      ]),
       m('input', {value: QuotePage.vm.email(), oninput: m.withAttr('value', QuotePage.vm.email)}),
       m('input', {value: QuotePage.vm.phone(), oninput: m.withAttr('value', QuotePage.vm.phone)}),
       m('input', {value: QuotePage.vm.services(), oninput: m.withAttr('value', QuotePage.vm.services)}),
@@ -15,6 +20,7 @@ QuotePage.view = function(ctrl) {
 QuotePage.vm = {
   init: function() {
     QuotePage.vm.name = m.prop('');
+    QuotePage.vm.companyName = m.prop('');
     QuotePage.vm.email = m.prop('');
     QuotePage.vm.phone = m.prop('');
     QuotePage.vm.services = m.prop('');

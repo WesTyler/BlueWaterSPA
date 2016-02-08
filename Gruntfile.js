@@ -62,5 +62,4 @@ module.exports = function(grunt) {
   // Register task(s).
   grunt.registerTask('package', ['bower_concat', 'concat', 'copy']);
   grunt.registerTask('run', ['package', 'express:server', 'watch']);
-  grunt.registerTask('deploy', ['package']);
 };
