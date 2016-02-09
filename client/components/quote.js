@@ -10,7 +10,11 @@ QuotePage.view = function(ctrl) {
       ]),
       m('input', {value: QuotePage.vm.email(), oninput: m.withAttr('value', QuotePage.vm.email)}),
       m('input', {value: QuotePage.vm.phone(), oninput: m.withAttr('value', QuotePage.vm.phone)}),
-      m('input', {value: QuotePage.vm.services(), oninput: m.withAttr('value', QuotePage.vm.services)}),
+      m('select', {onchange: function(e) {ctrl.toggleService(e)}}, [
+        m('option', 'Liner 1'),
+        m('option', 'Liner 2'),
+        m('option', 'Liner 3')
+      ]),
       m('input', {value: QuotePage.vm.comments(), oninput: m.withAttr('value', QuotePage.vm.comments)}),
       m('button', {onclick: QuotePage.vm.save}, 'Save Changes')
   ]),
@@ -50,4 +54,8 @@ QuotePage.vm = {
 
 QuotePage.controller = function() {
   QuotePage.vm.init();
+
+  this.toggleService = function(e) {
+    console.log(e.srcElement.value)
+  }
 };
