@@ -16,7 +16,7 @@ ul {
   margin-top: 0;
 }
 
-li { 
+li {
   display: inline;
   margin-right: 5px;
   margin-left: 5px;
@@ -63,6 +63,10 @@ h2 {
   background-color: #d9d9d9
 }
 
+.footer-text {
+  margin-top: 10px;
+}
+
 .footer-symbol {
   font-size: 8px;
   font-family: sans-serif;
@@ -83,4 +87,22 @@ h2 {
   border: 0px;
   position: relative;
   top: 10px;
+}
+
+.quoteForm {
+  display: block;
+}
+
+.quoteItem {
+  display: block;
+  text-align: center;
+  width: 75%;
+  margin: auto;
+  padding-top: 0.75em;
+}
+
+button.quoteItem {
+  width: 95px;
+  margin-top: 0.75em;
+  padding-top: 0em;
 }
