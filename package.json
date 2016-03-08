@@ -4,6 +4,7 @@
   "description": "Single Page App for BlueWater Energy Services LLC.",
   "main": "index.js",
   "scripts": {
+    "postinstall": "bower install",
     "start": "grunt package && node server/server.js"
   },
   "author": "westyler",
