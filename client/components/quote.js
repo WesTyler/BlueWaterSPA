@@ -34,7 +34,7 @@ QuotePage.vm = {
     QuotePage.vm.quoteData = m.prop({});
 
     QuotePage.vm.save = function() {
-        //console.log('CALLING QuotePAge.vm.save')
+        // console.log('CALLING QuotePAge.vm.save')
       var quoteData = {
         name    : QuotePage.vm.name(),
         company : QuotePage.vm.companyName(),
@@ -44,12 +44,17 @@ QuotePage.vm = {
       };
 
       QuotePage.vm.quoteData(new Quote(quoteData));
-      console.log('Quote model: \n', QuotePage.vm.quoteData())
-      QuotePage.vm.name('');
-      QuotePage.vm.companyName('');
-      QuotePage.vm.email('');
-      QuotePage.vm.phone('');
-      QuotePage.vm.comments('');
+      console.log('Quote model: \n', QuotePage.vm.quoteData());
+
+      m.request({method: 'POST', url: '/quote', data: QuotePage.vm.quoteData()})
+        .then(function(res)  {
+          alert('A quote has successfully been requested.');
+          QuotePage.vm.name('');
+          QuotePage.vm.companyName('');
+          QuotePage.vm.email('');
+          QuotePage.vm.phone('');
+          QuotePage.vm.comments('');
+        });
     };
   }
 };
