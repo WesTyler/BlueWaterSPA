@@ -1,9 +1,9 @@
-var NavBar = {};
+var Nav = {};
 
-NavBar.controller = function() {};
+Nav.controller = function() {};
 
-NavBar.view = function(ctrl) {
-  return m('.app', [
+Nav.view = function() {
+  return m('.navbar', [
     m('.header', [
       m('picture', {class: 'header-image clearfix'}, [
         m('source', {media: '(min-width: 915px)', srcset: 'assets/large-header.png'}),
@@ -13,10 +13,10 @@ NavBar.view = function(ctrl) {
     m('nav.clearfix', [
       m('hr'),
       m('ul', [
-        m('li', [m('a',{class: 'navLink homeNav', href: '#/'}, 'Home')]),
-        m('li', [m('a', {class: 'navLink servicesNav', href: '#/services'}, 'About Our Services')]),
-        m('li', [m('a',{class: 'navLink aboutNav', href: '#/about'}, 'About Us')]),
-        m('li', [m('a',{class: 'navLink quoteNav', href: '#/quote'}, 'Request A Quote')])
+        m('li', [m('a',{class: 'navLink homeNav', href: '/', config: m.route}, 'Home')]),
+        m('li', [m('a', {class: 'navLink servicesNav', href: '/services', config: m.route}, 'About Our Services')]),
+        m('li', [m('a',{class: 'navLink aboutNav', href: '/about', config: m.route}, 'About Us')]),
+        m('li', [m('a',{class: 'navLink quoteNav', href: '/quote', config: m.route}, 'Request A Quote')])
       ]),
       m('hr')
     ])

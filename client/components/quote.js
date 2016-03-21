@@ -2,24 +2,26 @@ var QuotePage = exports = {};
 
 QuotePage.view = function(ctrl) {
   return m('div', [
-      m('form', {class: 'quoteForm clearfix'}, [
-          m('label', {class: 'quoteItem'}, 'Contact Name', [
-            m('input', {value: QuotePage.vm.name(), oninput: m.withAttr('value', QuotePage.vm.name)})
-          ]),
-          m('label', {class: 'quoteItem'}, 'Company', [
-              m('input', {value: QuotePage.vm.companyName(), oninput: m.withAttr('value', QuotePage.vm.companyName)})
-          ]),
-          m('label', {class: 'quoteItem'}, 'Email', [
-              m('input', {value: QuotePage.vm.email(), type: 'email', oninput: m.withAttr('value', QuotePage.vm.email)})
-          ]),
-          m('label', {class: 'quoteItem'}, 'Phone', [
-              m('input', {value: QuotePage.vm.phone(), type: 'tel', oninput: m.withAttr('value', QuotePage.vm.phone)})
-          ]),
-          m('label', {class: 'quoteItem'}, 'Other Comments', [
-              m('input', {value: QuotePage.vm.comments(), oninput: m.withAttr('value', QuotePage.vm.comments)})
-          ]),
-          m('button', {class: 'quoteItem', onclick: QuotePage.vm.save}, 'Save Changes')
-      ])
+    Nav.view(),
+    m('form', {class: 'quoteForm clearfix'}, [
+        m('label', {class: 'quoteItem'}, 'Contact Name', [
+          m('input', {value: QuotePage.vm.name(), oninput: m.withAttr('value', QuotePage.vm.name)})
+        ]),
+        m('label', {class: 'quoteItem'}, 'Company', [
+            m('input', {value: QuotePage.vm.companyName(), oninput: m.withAttr('value', QuotePage.vm.companyName)})
+        ]),
+        m('label', {class: 'quoteItem'}, 'Email', [
+            m('input', {value: QuotePage.vm.email(), type: 'email', oninput: m.withAttr('value', QuotePage.vm.email)})
+        ]),
+        m('label', {class: 'quoteItem'}, 'Phone', [
+            m('input', {value: QuotePage.vm.phone(), type: 'tel', oninput: m.withAttr('value', QuotePage.vm.phone)})
+        ]),
+        m('label', {class: 'quoteItem'}, 'Other Comments', [
+            m('input', {value: QuotePage.vm.comments(), oninput: m.withAttr('value', QuotePage.vm.comments)})
+        ]),
+        m('button', {class: 'quoteItem', onclick: QuotePage.vm.save}, 'Save Changes')
+    ]),
+    Footer.view()
   ])
 };
 
