@@ -3,7 +3,7 @@ var QuotePage = exports = {};
 QuotePage.view = function(ctrl) {
   return m('div', [
     Nav.view(),
-    m('form', {class: 'quoteForm clearfix'}, [
+    m('form', {class: 'view clearfix'}, [
         m('label', {class: 'quoteItem'}, 'Contact Name', [
           m('input', {value: QuotePage.vm.name(), oninput: m.withAttr('value', QuotePage.vm.name)})
         ]),

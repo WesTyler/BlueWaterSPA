@@ -1,6 +1,19 @@
-nav, footer {
+.background-everything {
+  background-color: #1d6db2;
+  opacity: 0.5;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -5;
+  overflow: hidden;
+}
+
+nav, footer, .view {
   width: 75%;
   margin: auto;
+  text-align: center;
 }
 
 footer {
@@ -36,11 +49,6 @@ img {
   margin-left: auto;
   margin-right: auto;
   display: block;
-}
-
-.contentHolder {
-  width: 85%;
-  margin: auto;
 }
 
 h4 {
@@ -87,10 +95,6 @@ h2 {
   border: 0px;
   position: relative;
   top: 10px;
-}
-
-.quoteForm {
-  display: block;
 }
 
 .quoteItem {

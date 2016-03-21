@@ -3,7 +3,7 @@ var About = exports = {};
 About.controller = function(){};
 
 About.view = function(){
-  return m('div', {class: 'aboutView clearfix'}, [
+  return m('div', {class: 'view clearfix'}, [
     Nav.view(),
     m('h2.aboutHeader', 'Our Business'),
     m('p.about', 'Established in 2013, we are eager to put our experience to work building a company that exceeds customer expectations.  We pride ourselves on integrity in business and quality of our products.  Owners are present on nearly every job to ensure we provide the highest quality of services.' ),

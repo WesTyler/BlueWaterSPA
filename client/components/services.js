@@ -28,7 +28,7 @@ Services.controller = function(){
 };
 
 Services.view = function(ctrl){
-  return m('div', {class: 'servicesView clearfix'}, [
+  return m('div', {class: 'view clearfix'}, [
     Nav.view(),
     m('.image', ctrl.selectedServiceImage()),
     m('h2.aboutHeader', 'About BlueWater Services'),
