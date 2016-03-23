@@ -1,6 +1,4 @@
-.background-everything {
-  background-color: #1d6db2;
-  opacity: 0.5;
+/*.background-everything {
   height: 100%;
   width: 100%;
   position: absolute;
@@ -8,9 +6,26 @@
   left: 0;
   z-index: -5;
   overflow: hidden;
+}*/
+
+nav, footer {
+  display: block;
+  width: 100%;
+  margin: auto;
+  text-align: center;
 }
 
-nav, footer, .view {
+nav {
+  margin-top: 0px;
+  background-color: #1d6db2;
+}
+
+.header {
+  background-color: #F0FFFF;
+  padding: 10px;
+}
+
+.view {
   width: 75%;
   margin: auto;
   text-align: center;
@@ -24,9 +39,12 @@ footer {
 ul {
   list-style-type: none;
   padding-left: 0px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   text-align: center;
   display: block;
   margin-top: 0;
+  margin-bottom: 0;
 }
 
 li {
@@ -38,7 +56,9 @@ li {
 
 .navLink {
   text-decoration: none;
-  color: #999999;
+  font-family: sans-serif;
+  color: #F0FFFF;
+  /*color: #999999;*/
 }
 
 a:hover {
