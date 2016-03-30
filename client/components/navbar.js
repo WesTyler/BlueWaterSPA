@@ -4,7 +4,7 @@ Nav.controller = function() {};
 
 Nav.view = function() {
   return m('.navbar', [
-    // m('.background-everything'),
+    // m('img.background-everything', {src: 'assets/watermark2.jpg', alt: 'BlueWater Energy Services, LLC'}),
     m('.header', [
       m('picture', {class: 'header-image clearfix'}, [
         m('source', {media: '(min-width: 915px)', srcset: 'assets/large-header.png'}),
