@@ -1,7 +1,7 @@
 var QuotePage = exports = {};
 
 QuotePage.view = function(ctrl) {
-  return m('div', [
+  return m('div.container', [
     Nav.view(),
     m('form', {class: 'view clearfix'}, [
         m('label', {class: 'quoteItem'}, 'Contact Name', [
