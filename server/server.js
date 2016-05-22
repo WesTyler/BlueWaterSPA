@@ -1,7 +1,6 @@
 var express         = require('express'),
     path            = require('path'),
     routes          = require('./routes'),
-    // requestHandler  = require('./requestHandlers');
     bodyParser      = require('body-parser');
 
 var app = express();

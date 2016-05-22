@@ -17,9 +17,9 @@ QuotePage.view = function(ctrl) {
             m('input', {value: QuotePage.vm.phone(), type: 'tel', oninput: m.withAttr('value', QuotePage.vm.phone)})
         ]),
         m('label', {class: 'quoteItem'}, 'Other Comments', [
-            m('input', {value: QuotePage.vm.comments(), oninput: m.withAttr('value', QuotePage.vm.comments)})
+            m('textarea', {value: QuotePage.vm.comments(), oninput: m.withAttr('value', QuotePage.vm.comments)})
         ]),
-        m('button', {class: 'quoteItem', onclick: QuotePage.vm.save}, 'Save Changes')
+        m('button', {class: 'quoteItem', onclick: QuotePage.vm.save}, 'Request Quote')
     ]),
     Footer.view()
   ])
@@ -36,7 +36,6 @@ QuotePage.vm = {
     QuotePage.vm.quoteData = m.prop({});
 
     QuotePage.vm.save = function() {
-        // console.log('CALLING QuotePAge.vm.save')
       var quoteData = {
         name    : QuotePage.vm.name(),
         company : QuotePage.vm.companyName(),
@@ -46,7 +45,6 @@ QuotePage.vm = {
       };
 
       QuotePage.vm.quoteData(new Quote(quoteData));
-      console.log('Quote model: \n', QuotePage.vm.quoteData());
 
       m.request({method: 'POST', url: '/quote', data: QuotePage.vm.quoteData()})
         .then(function(res)  {
