@@ -60,7 +60,7 @@ footer {
   text-align: center;
 }
 
-ul {
+.nav-list-ul {
   list-style-type: none;
   padding-left: 0px;
   padding-top: 10px;
@@ -71,7 +71,7 @@ ul {
   margin-bottom: 0;
 }
 
-li {
+.nav-list-li {
   display: inline;
   margin-right: 5px;
   margin-left: 5px;
@@ -126,7 +126,7 @@ p {
 .details, .details:hover {
   font-size: 0.8em;
   padding: 5px 5px 5px 5px;
-  background-color: #d9d9d9
+  background-color: #d9d9d9;
   color: #999999;
 }
 
@@ -156,12 +156,65 @@ p {
   top: 10px;
 }
 
-.quoteItem {
-  display: block;
-  text-align: center;
-  width: 75%;
-  margin: auto;
-  padding-top: 0.75em;
+.contact-ul {
+    width:750px;
+    list-style-type:none;
+    list-style-position:outside;
+    margin: auto;
+    padding:0px;
+}
+
+.contact-li {
+    padding:10px;
+    border-bottom:1px solid #eee;
+    position:relative;
+}
+
+*:focus {
+    outline-style: none;
+}
+
+.contact-form label {
+    text-align: right;
+    width:250px;
+    margin-top: 3px;
+    display:inline-block;
+    float:left;
+    padding:3px;
+}
+
+.contact-form input {
+    height:20px;
+    width:220px;
+    padding:5px 8px;
+}
+
+.contact-form textarea {
+    padding:8px;
+    width:300px;
+}
+
+.contact-form input, .contact-form textarea {
+    border:1px solid #aaa;
+    box-shadow: 0px 0px 3px #ccc, 0 10px 15px #eee inset;
+    border-radius:2px;
+    -moz-transition: width .25s;
+    -webkit-transition: width .25s;
+    -o-transition: width .25s;
+    transition: width .25s;
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+    background: #fff;
+    border:1px solid #555;
+    box-shadow: 0 0 3px #aaa;
+}
+.contact-form input:focus {
+    width: 250px;
+}
+
+.contact-form textarea:focus {
+    width: 330px;
 }
 
 button.quoteItem {
