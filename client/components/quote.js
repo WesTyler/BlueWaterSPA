@@ -6,7 +6,8 @@ QuotePage.view = function() {
     m('form', {class: 'view contact-form clearfix'}, [
         m('ul.contact-ul', [
             m('li', [
-                m('h4', 'Contact us for more information.')
+                m('h4', 'Contact us for more information.'),
+                m('h5', 'You will be contacted within 24 hours to discuss the details of your request.')
             ]),
             m('li.contact-li', [
                 m('label', 'Contact Name'),
