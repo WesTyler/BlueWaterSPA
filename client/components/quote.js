@@ -6,7 +6,7 @@ QuotePage.view = function() {
     m('form', {class: 'view contact-form clearfix'}, [
         m('ul.contact-ul', [
             m('li', [
-                m('h3', 'Contact us for more information.')
+                m('h4', 'Contact us for more information.')
             ]),
             m('li.contact-li', [
                 m('label', 'Contact Name'),
@@ -43,15 +43,13 @@ QuotePage.view = function() {
             m('li.contact-li', [
                 m('label', 'Other Comments'),
                 m('textarea', {placeholder: 'Please share any other details with us here.', value: QuotePage.vm.comments(), oninput: m.withAttr('value', QuotePage.vm.comments)})
-            ])
+            ]),
+            m('button', {class: 'quoteItem', onclick: QuotePage.vm.save}, 'Request Quote')
         ])
     ]),
     Footer.view()
   ])
 };
-/*
- m('button', {class: 'quoteItem', onclick: QuotePage.vm.save}, 'Request Quote')
- */
 
 QuotePage.vm = {
   init: function() {
