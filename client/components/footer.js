@@ -13,9 +13,9 @@ Footer.view = function(ctrl) {
         m('br'),
         'BlueWater Energy Services, LLC',
         m('br'),
-        'PO Box 721954',
+        'PO Box 850827',
         m('br'),
-        'Oklahoma City, OK 73172',
+        'Yukon, OK 73085',
         m('br'),
         m('a', {href: 'mailto:contact@bluewaterok.com'}, 'Contact@bluewaterok.com')
         ])
