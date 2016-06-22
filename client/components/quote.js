@@ -27,19 +27,19 @@ QuotePage.view = function() {
             ]),
             m('li.contact-li', [
                 m('label', 'Type of Containment'),
-                m('input', {placeholder: 'Tell us more about what you are needing.', value: QuotePage.vm.containmentNeeded(), oninput: m.withAttr('value', QuotePage.vm.containmentNeeded)})
+                m('input', {placeholder: 'Tell us about what you are needing.', value: QuotePage.vm.containmentNeeded(), oninput: m.withAttr('value', QuotePage.vm.containmentNeeded)})
             ]),
             m('li.contact-li', [
                 m('label', 'Type of Equipment'),
-                m('input', {placeholder: 'Tell us more about what you have.', value: QuotePage.vm.containmentEquipment(), oninput: m.withAttr('value', QuotePage.vm.containmentEquipment)})
+                m('input', {placeholder: 'Tell us about what you have.', value: QuotePage.vm.containmentEquipment(), oninput: m.withAttr('value', QuotePage.vm.containmentEquipment)})
             ]),
             m('li.contact-li', [
                 m('label', 'Estimated Dimensions of Containment (ft)'),
-                m('input', {placeholder: 'Length', value: QuotePage.vm.containmentLength(), type: 'number', oninput: m.withAttr('value', QuotePage.vm.containmentLength)}),
+                m('input', {placeholder: 'Length (0.0)', value: QuotePage.vm.containmentLength(), type: 'number', oninput: m.withAttr('value', QuotePage.vm.containmentLength)}),
                 m('br'),
-                m('input', {placeholder: 'Width', value: QuotePage.vm.containmentWidth(), type: 'number', oninput: m.withAttr('value', QuotePage.vm.containmentWidth)}),
+                m('input', {placeholder: 'Width (0.0)', value: QuotePage.vm.containmentWidth(), type: 'number', oninput: m.withAttr('value', QuotePage.vm.containmentWidth)}),
                 m('br'),
-                m('input', {placeholder: 'Height', value: QuotePage.vm.containmentHeight(), type: 'number', oninput: m.withAttr('value', QuotePage.vm.containmentHeight)})
+                m('input', {placeholder: 'Height (0.0)', value: QuotePage.vm.containmentHeight(), type: 'number', oninput: m.withAttr('value', QuotePage.vm.containmentHeight)})
             ]),
             m('li.contact-li', [
                 m('label', 'Other Comments'),
