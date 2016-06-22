@@ -111,6 +111,15 @@ footer {
     width: 50%;
 }
 
+@media (max-width: 1075px) {
+    .image-holder {
+        display: none;
+    }
+    .about-holder {
+        width: 100%
+    }
+}
+
 h4 {
     color: #999999;
     margin-top: 1em;
