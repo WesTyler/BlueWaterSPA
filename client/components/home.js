@@ -1,53 +1,56 @@
 var Home = exports = {};
 
 Home.controller = function(){
-    var ctrl = this;
+    var ctrl                = this,
+        serviceDescriptions = {
+            slideshow : '',
+            muscleWall: 'Muscle Wall',
+            sprayOn   : 'Spray On Polyurea',
+            driveOver : 'Drive Over'
+        };
 
-    ctrl.selectedService = m.prop('');
-    ctrl.imgNumber = 1;
-    ctrl.slidePrefix = 'slideshow-';
+    ctrl.serviceDescription = m.prop('');
+
+    ctrl.selectedService = m.prop('slideshow');
+    ctrl.imageSet = {
+        slideshow : ['drive-1', 'drive-2', 'drive-3', 'mw-1', 'mw-2', 'mw-3', 'mw-4', 'mw-5', 'spray-1', 'spray-2', 'spray-3'],
+        muscleWall: ['mw-1', 'mw-2', 'mw-3', 'mw-4', 'mw-5'],
+        sprayOn   : ['spray-1', 'spray-2', 'spray-3'],
+        driveOver : ['drive-1', 'drive-2', 'drive-3']
+    };
+    ctrl.imgNumber = 0;
+    ctrl.slidePrefix = 'slideshow';
     ctrl.displayImg = function() {
-        return m('img', { src: '../assets/' + ctrl.slidePrefix + ctrl.imgNumber +'.png', width: '400', height: '400' });};
+        return m('img', { src: '../assets/' + ctrl.imageSet[ctrl.selectedService()][ctrl.imgNumber] +'.png', width: '400', height: '400' });};
     ctrl.interval;
 
-    var togglePhotoSlideShow = function(bool) {
-        if (bool) {
-            ctrl.interval = setInterval(function() {
-                ctrl.imgNumber++;
-                if (ctrl.imgNumber > 4) {
-                    ctrl.imgNumber = 1;
-                }
-
-                m.redraw();
-            }, 2000);
-        } else {
+    var togglePhotoSlideShow = function() {
+        if (ctrl.interval) {
             clearInterval(ctrl.interval);
         }
+
+        ctrl.interval = setInterval(function() {
+            ctrl.imgNumber++;
+            if (ctrl.imgNumber > ctrl.imageSet[ctrl.selectedService()].length - 1) {
+                ctrl.imgNumber = 0;
+            }
+
+            ctrl.serviceDescription(serviceDescriptions[ctrl.selectedService()]);
+
+            m.redraw();
+        }, 2000);
     };
 
-    togglePhotoSlideShow(true);
+    togglePhotoSlideShow();
 
     ctrl.toggleService = function(serviceName) {
       if (ctrl.selectedService() === serviceName) {
-          togglePhotoSlideShow(true);
-          ctrl.selectedService('');
+          togglePhotoSlideShow();
+          ctrl.selectedService('slideshow');
       } else {
-          togglePhotoSlideShow(false);
+          togglePhotoSlideShow();
           ctrl.selectedService(serviceName);
       }
-    };
-
-    ctrl.selectedServiceImage = function() {
-        switch(ctrl.selectedService()) {
-            case 'muscleWall':
-                return m('.img', 'Muscle Wall Image');
-            case 'driveOver':
-                return m('.img', 'Drive Over Image');
-            case 'polyUrea':
-                return m('.img', 'Polyurea Image');
-            default:
-                return ctrl.imgNumber;
-        }
     };
 };
 
@@ -56,7 +59,8 @@ Home.view = function(ctrl){
       Nav.view(),
       m('div', {class: 'view clearfix'}, [
           m('.image-holder', [
-              ctrl.displayImg()
+              ctrl.displayImg(),
+              ctrl.serviceDescription()
           ]),
           m('.about-holder', [
               m('h2.home-description', 'At Bluewater we provide containment solutions for drilling, completions, and product operations.'),
@@ -84,9 +88,9 @@ Home.view = function(ctrl){
                       }
                   }()
               ]),
-              m('h4.aboutItem', {onclick: function() {ctrl.toggleService('polyUrea')}}, 'Polyurea Sprayed Secondary Containment', [
+              m('h4.aboutItem', {onclick: function() {ctrl.toggleService('sprayOn')}}, 'Polyurea Sprayed Secondary Containment', [
                   function() {
-                      if (ctrl.selectedService() === 'polyUrea') {
+                      if (ctrl.selectedService() === 'sprayOn') {
                           return m('.details', 'Sprayed on polyurea offers a superior containment solution for all containment applications.  It can be custom built into any size facility or jobsite.  Polyurea\'s chemical resistance properties, tensile strength and durability surpass other liner options.');
                       }
                   }()

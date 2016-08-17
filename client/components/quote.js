@@ -35,11 +35,11 @@ QuotePage.view = function() {
             ]),
             m('li.contact-li', [
                 m('label', 'Estimated Dimensions of Containment (ft)'),
-                m('input', {placeholder: 'Length (0.0)', value: QuotePage.vm.containmentLength(), type: 'number', oninput: m.withAttr('value', QuotePage.vm.containmentLength)}),
+                m('input', {placeholder: 'Length (0.0)', value: QuotePage.vm.containmentLength(), oninput: m.withAttr('value', QuotePage.vm.containmentLength)}),
                 m('br'),
-                m('input', {placeholder: 'Width (0.0)', value: QuotePage.vm.containmentWidth(), type: 'number', oninput: m.withAttr('value', QuotePage.vm.containmentWidth)}),
+                m('input', {placeholder: 'Width (0.0)', value: QuotePage.vm.containmentWidth(), oninput: m.withAttr('value', QuotePage.vm.containmentWidth)}),
                 m('br'),
-                m('input', {placeholder: 'Height (0.0)', value: QuotePage.vm.containmentHeight(), type: 'number', oninput: m.withAttr('value', QuotePage.vm.containmentHeight)})
+                m('input', {placeholder: 'Height (0.0)', value: QuotePage.vm.containmentHeight(), oninput: m.withAttr('value', QuotePage.vm.containmentHeight)})
             ]),
             m('li.contact-li', [
                 m('label', 'Other Comments'),
