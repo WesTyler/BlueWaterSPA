@@ -1,5 +1,4 @@
 body {
-    /*background-color: #f4f4f4;*/
     background-color: #FFFFFF;
 }
 
@@ -20,7 +19,6 @@ body {
 
 /*NAV BAR*/
 .header {
-    /*background-color: #FFFFFF;*/
     padding: 10px;
 }
 
@@ -132,7 +130,7 @@ h4 {
 }
 
 h3 {
-    color: #999999;
+    color: #1d6db2;
 }
 
 h2 {
@@ -163,9 +161,8 @@ p {
     color: #999999;
 }
 
-/*ABOUT PAGE*/
-.right-side, .left-side {
-    display: inline-block;
+.about-holder {
+    width: 65%
 }
 
 @media (min-width: 1075px) {
@@ -262,6 +259,10 @@ p {
 
 .contact-form textarea:focus {
     width: 330px;
+}
+
+.contact-form h3 {
+    color: #000000;
 }
 
 button.quoteItem {

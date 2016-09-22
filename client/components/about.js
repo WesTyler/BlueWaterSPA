@@ -6,19 +6,14 @@ About.view = function(){
   return m('div.container', [
       Nav.view(),
       m('div', {class: 'view'}, [
-          m('.left-side', [
-              m('.business', [
-                  m('h2.aboutHeader', 'Our Business'),
-                  m('p.about', 'Established in 2013, we are eager to put our experience to work building a company that exceeds customer expectations.  We pride ourselves on integrity in business and quality of our products.  Owners are present on nearly every job to ensure we provide the highest quality of services.' ),
-              ]),
-              m('.about-picture', 'This will be an image or slideshow.')
-          ]),
-          m('.right-side', [
+          m('.about-holder', [
               m('.people', [
                   m('h2.aboutHeader', 'Who We Are'),
                   m('p.about', 'Our Managers have more than 50 combined years of experience in the oil and gas services industry. That experience allows us to help evaluate the needs of each job and provide the best solutions possible.'),
               ]),
               m('.bios', [
+                  m('h4.aboutItem', 'Phillip Boren - President and Managing Partner'),
+                  m('p.about', 'Phillip has 30 years oilfield experience with service company operations and management and holds a BS in geology. He has several years direct experience managing brine pits, double-lined with leak detection systems. Phillip served as Containment Service Line Manager for a large oilfield service company with 5 years direct experience managing secondary and primary containment installations and operations.'),
                   m('h4.aboutItem', 'Beth Boren - General Manager/Member'),
                   m('p.about', 'Beth has eight years of oilfield service experience in accounting, operations and management.  Beth has worked for two years directly managing containment services and executing jobs in the field.  She holds a masters degree in accounting and oversees the performance of the business.'),
                   m('h4.aboutItem', 'John McKee - Director of Operations/Member'),

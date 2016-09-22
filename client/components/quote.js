@@ -45,7 +45,16 @@ QuotePage.view = function() {
                 m('label', 'Other Comments'),
                 m('textarea', {placeholder: 'Please share any other details with us here.', value: QuotePage.vm.comments(), oninput: m.withAttr('value', QuotePage.vm.comments)})
             ]),
-            m('button', {class: 'quoteItem', onclick: QuotePage.vm.save}, 'Request Quote')
+            m('button', {class: 'quoteItem', onclick: QuotePage.vm.save}, 'Request Quote'),
+            m('li', [
+                m('h3', 'Contact Us'),
+                m('h4', 'Mailing'),
+                m('p', 'BlueWater Energy Services, LLC'),
+                m('p','PO Box 850827'),
+                m('p','Yukon, OK 73085'),
+                m('h4', 'Email'),
+                m('a', {href: 'mailto:contact@bluewaterok.com'}, 'contact@bluewaterok.com')
+            ])
         ])
     ]),
     Footer.view()
