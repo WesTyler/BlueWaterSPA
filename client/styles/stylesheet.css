@@ -144,9 +144,12 @@ p {
     margin-bottom: 0.25em;
 }
 
-.aboutItem {
+.aboutItem, .aboutPerson {
     font-family: sans-serif;
     font-size: 1.25em;
+}
+
+.aboutItem {
     cursor: pointer;
 }
 
