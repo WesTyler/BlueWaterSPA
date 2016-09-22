@@ -38,7 +38,7 @@ Home.controller = function(){
             ctrl.serviceDescription(serviceDescriptions[ctrl.selectedService()]);
 
             m.redraw();
-        }, 2000);
+        }, 4000);
     };
 
     togglePhotoSlideShow();
@@ -59,11 +59,15 @@ Home.view = function(ctrl){
       Nav.view(),
       m('div', {class: 'view clearfix'}, [
           m('.image-holder', [
-              ctrl.displayImg(),
-              ctrl.serviceDescription()
+              ctrl.displayImg()
           ]),
           m('.about-holder', [
-              m('h2.home-description', 'At Bluewater we provide containment solutions for drilling, completions, and product operations.'),
+              m('.business', [
+                  m('h2.aboutHeader', 'Our Business'),
+                  m('p.about', 'Established in 2013, we are eager to put our experience to work building a company that exceeds customer expectations.  We pride ourselves on integrity in business and quality of our products. Safety is a primary concern and our safety statistics are among the best in the industry. BlueWater is a member of both ISN and PEC and has sent all employees through SafeLand Orientation. Owners are present on nearly every job to ensure we provide the highest quality of services.' ),
+                  // add safeland, pec, and isn images from dropbox in a row here.
+              ]),
+              m('h2.home-description', 'At Bluewater we provide containment solutions for drilling, completions, and production operations.'),
               m('h3.home-description', 'Please select a service below to learn more.'),
               m('h4.aboutItem', {onclick: function() {ctrl.toggleService('muscleWall')}}, 'Muscle Wall Secondary Containment', [
                   function() {
@@ -84,7 +88,7 @@ Home.view = function(ctrl){
               m('h4.aboutItem', {onclick: function() {ctrl.toggleService('driveOver')}}, 'Drive Over Containment with Liner', [
                   function() {
                       if (ctrl.selectedService() === 'driveOver') {
-                          return m('.details', 'These are the details about Drive Over Containment with Liner');
+                          return m('.details', 'Drive over style containments can be made with different types of liner depending on application. These containments are best suited for stationary equipment for short periods. High traffic use will increase chances of tearing the liner. The walls are made from a durable foam and the entire containment can be made to exact customer specifications.');
                       }
                   }()
               ]),

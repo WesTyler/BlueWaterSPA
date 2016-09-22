@@ -13,9 +13,9 @@ Nav.view = function() {
     m('nav.clearfix', [
       m('ul.nav-list-ul', [
         m('li.nav-list-li', [m('a',{class: 'navLink homeNav', href: '/', config: m.route}, 'Home')]),
-        m('li.nav-list-li', [m('a', {class: 'navLink servicesNav', href: '/about', config: m.route}, 'About BlueWater')]),
+        m('li.nav-list-li', [m('a', {class: 'navLink servicesNav', href: '/about', config: m.route}, 'Who We Are')]),
         m('li.nav-list-li', [m('a',{class: 'navLink quoteNav', href: '/quote', config: m.route}, 'Request A Quote')])
-      ]),
+      ])
     ])
   ]);
 };
