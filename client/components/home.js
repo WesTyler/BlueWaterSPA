@@ -13,7 +13,7 @@ Home.controller = function(){
 
     ctrl.selectedService = m.prop('slideshow');
     ctrl.imageSet = {
-        slideshow : ['drive-1', 'drive-2', 'drive-3', 'mw-1', 'mw-2', 'mw-3', 'mw-4', 'mw-5', 'spray-1', 'spray-2', 'spray-3'],
+        slideshow : ['new-web', 'new-web-2', 'new-web-3', 'new-web-4', 'new-web-5'/*'drive-1', 'drive-2', 'drive-3', 'mw-1', 'mw-2', 'mw-3', 'mw-4', 'mw-5', 'spray-1', 'spray-2', 'spray-3'*/],
         muscleWall: ['mw-1', 'mw-2', 'mw-3', 'mw-4', 'mw-5'],
         sprayOn   : ['spray-1', 'spray-2', 'spray-3'],
         driveOver : ['drive-1', 'drive-2', 'drive-3']
@@ -21,7 +21,7 @@ Home.controller = function(){
     ctrl.imgNumber = 0;
     ctrl.slidePrefix = 'slideshow';
     ctrl.displayImg = function() {
-        return m('img', { src: '../assets/' + ctrl.imageSet[ctrl.selectedService()][ctrl.imgNumber] +'.png', width: '400', height: '400' });};
+        return m('img', { src: '../assets/' + ctrl.imageSet['slideshow'/*ctrl.selectedService()*/][ctrl.imgNumber] +'.png', width: '400'/*, height: '400'*/ });};
     ctrl.interval;
 
     var togglePhotoSlideShow = function() {
@@ -31,11 +31,11 @@ Home.controller = function(){
 
         ctrl.interval = setInterval(function() {
             ctrl.imgNumber++;
-            if (ctrl.imgNumber > ctrl.imageSet[ctrl.selectedService()].length - 1) {
+            if (ctrl.imgNumber > ctrl.imageSet['slideshow'/*ctrl.selectedService()*/].length - 1) {
                 ctrl.imgNumber = 0;
             }
 
-            ctrl.serviceDescription(serviceDescriptions[ctrl.selectedService()]);
+            ctrl.serviceDescription(serviceDescriptions['slideshow'/*ctrl.selectedService()*/]);
 
             m.redraw();
         }, 4000);
@@ -45,10 +45,10 @@ Home.controller = function(){
 
     ctrl.toggleService = function(serviceName) {
       if (ctrl.selectedService() === serviceName) {
-          togglePhotoSlideShow();
+          // togglePhotoSlideShow();
           ctrl.selectedService('slideshow');
       } else {
-          togglePhotoSlideShow();
+          // togglePhotoSlideShow();
           ctrl.selectedService(serviceName);
       }
     };
