@@ -108,15 +108,12 @@ footer {
 @media (min-width: 1075px) {
     .image-holder, .about-holder {
         display: inline-block;
-        width: 50%;
+        width: 65%;
         height: 100%;
     }
 }
 
 @media (max-width: 1074px) {
-    .image-holder {
-        display: none;
-    }
     .about-holder {
         height: 100%;
         width : 100%
@@ -164,9 +161,9 @@ p {
     color: #999999;
 }
 
-.about-holder {
-    width: 65%
-}
+/*.about-holder {*/
+    /*width: 65%*/
+/*}*/
 
 @media (min-width: 1075px) {
     .right-side, .left-side {
@@ -179,10 +176,6 @@ p {
     .right-side, .left-side {
         padding: 0;
         width: 95%;
-    }
-
-    .about-picture {
-        display: none;
     }
 }
 
